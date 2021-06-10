@@ -11,7 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "4.17.1",
-    "ethers": "^4.0.41"
+    "cors": "^2.8.5",
+    "ethers": "^4.0.41",
+    "express": "4.17.1"
   }
 }

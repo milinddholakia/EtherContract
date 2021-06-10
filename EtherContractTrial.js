@@ -1,6 +1,8 @@
 const { ethers } = require("ethers");
 const express = require("express");
+var cors = require('cors')
 const app = express();
+
 const provider = ethers.getDefaultProvider('ropsten');
 
 // const signer = provider.getSigner()
@@ -21,7 +23,9 @@ async function candidateB() {
     console.log(valueB.toString());
     return valueB.toString();
 }
+app.use(cors())
 app.get('/getCandidateA',async (req, res) => {
+    
     const responseA = await candidateA();
     
     res.send(responseA);
@@ -33,4 +37,4 @@ app.get('/getCandidateB',async (req, res) => {
     res.send(responseB);
 });
 
-app.listen(process.env.PORT || 3000, () => console.log('Lets Begin'));
+app.listen(process.env.PORT || 3001, () => console.log('Lets Begin'));
