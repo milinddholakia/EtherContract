@@ -28,4 +28,4 @@ app.get('/getCandidateB', (req, res) => {
     res.send(candidateB());
 });
 
-app.listen(3000, () => console.log('Lets Begin'));
+app.listen(process.env.PORT || 3000, () => console.log('Lets Begin'));
