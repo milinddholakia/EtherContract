@@ -21,11 +21,16 @@ async function candidateB() {
     console.log(valueB.toString());
     return valueB.toString();
 }
-app.get('/getCandidateA', (req, res) => {
-    res.send(candidateA());
+app.get('/getCandidateA',async (req, res) => {
+    const responseA = await candidateA();
+    
+    res.send(responseA);
+    
+
 });
-app.get('/getCandidateB', (req, res) => {
-    res.send(candidateB());
+app.get('/getCandidateB',async (req, res) => {
+    const responseB = await candidateB();
+    res.send(responseB);
 });
 
 app.listen(process.env.PORT || 3000, () => console.log('Lets Begin'));
